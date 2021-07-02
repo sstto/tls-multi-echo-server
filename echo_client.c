@@ -26,9 +26,16 @@ SSL_CTX* InitCTX(void)
 {
     const SSL_METHOD *method;
     SSL_CTX *ctx;
+
+    // must be called before any other action.
     SSL_library_init();
     SSL_load_error_strings();
+
+    // Methods implement the various protocol version.
     method = TLSv1_2_client_method();
+
+    // global context structure created by a server or client once per program life-time
+    // which holds mainly default values for the SSL structures which are later created for the connection.
     ctx = SSL_CTX_new(method);
     if ( ctx == NULL )
     {
@@ -59,6 +66,7 @@ int main(int argc, char *argv[]){
     char message[BUF_SIZE];
     int str_len;
     struct sockaddr_in serv_adr;
+
     SSL_CTX *ctx;
     SSL *ssl;
 
@@ -71,9 +79,12 @@ int main(int argc, char *argv[]){
     if(sock == -1){
         error_handling("socket() error");
     }
-
+    // Initializing
     ctx = InitCTX();
+    // SSL Connection : main TLS structure
     ssl = SSL_new(ctx);
+
+    // automatically created to interface between the ssl and fd(socket).
     SSL_set_fd(ssl, sock);
 
     memset(&serv_adr, 0, sizeof(serv_adr));
@@ -86,9 +97,12 @@ int main(int argc, char *argv[]){
     }else{
         puts("connected...");
     }
+
+    // tls handshake
     if ( SSL_connect(ssl) == -1)
         printf("Faild to HandShake\n");
     else{
+        // only show cert
         ShowCerts(ssl);
         while(1){
             fputs("Input message(Q to quit): ", stdout);
