@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sim/CLionProjects/ssl_SocketProgramming/echo_mpserv.c
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+signal.h
+-
+sys/wait.h
+-
+arpa/inet.h
+-
+sys/socket.h
+-
+string.h
+-
+memory.h
+-
+errno.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+netdb.h
+-
+openssl/rsa.h
+-
+openssl/crypto.h
+-
+openssl/pem.h
+-
+openssl/ssl.h
+-
+openssl/err.h
+-
+

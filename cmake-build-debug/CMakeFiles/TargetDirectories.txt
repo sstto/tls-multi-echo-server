@@ -1,0 +1,5 @@
+/home/sim/CLionProjects/ssl_SocketProgramming/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sim/CLionProjects/ssl_SocketProgramming/cmake-build-debug/CMakeFiles/Server.dir
+/home/sim/CLionProjects/ssl_SocketProgramming/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sim/CLionProjects/ssl_SocketProgramming/cmake-build-debug/CMakeFiles/Client1.dir
+/home/sim/CLionProjects/ssl_SocketProgramming/cmake-build-debug/CMakeFiles/Client2.dir
